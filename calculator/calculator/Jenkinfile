@@ -1,0 +1,23 @@
+pipeline{
+agent any
+
+stages {
+
+        stage("Checkout") {
+
+steps { git url: 'https://github.com/suresh-developer/calculator', branch: 'main'
+
+            }
+
+        }
+        stage("Compile") {
+
+steps {
+
+sh "./gradlew compileJava"
+
+            }
+
+        }
+    }
+}
